@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rosroomba</name>
+  <version>0.0.0</version>
+  <description>The rosroomba package</description>
+  <maintainer email="jsmith2021@brandeis.edu">Jacob Smith</maintainer>
+  <license>GPLv3</license>
+  <!--   <doc_depend>doxygen</doc_depend> -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>message_generation</exec_depend>
+  <exec_depend>actionlib_msgs</exec_depend>
+  <depend>actionLib</depend>
+
+  <export>
+  </export>
+</package>

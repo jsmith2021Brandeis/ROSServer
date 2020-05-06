@@ -1,0 +1,24 @@
+#!/bin/bash
+#Jacob smith COSI 119A 9/9/2019 Roomba
+#Launches terminal windows and scripts for Roomba assignment
+#Modoifed from 4.1Script
+#links in readme
+
+#create variable for window coordinate
+count="0"
+#launch roscore in other terminal and wait for it to start up
+gnome-terminal --geometry 73x31+0+0 -- /bin/sh -c 'roscore'
+sleep 2
+#set Model of Turtlebot gazebo, launch gazbo, and wait
+gnome-terminal --geometry 73x31+200+0 -- /bin/sh -c 'export TURTLEBOT3_MODEL="burger";roslaunch turtlebot3_gazebo turtlebot3_world.launch'
+sleep 4
+#loop through every python file in program
+#give file permissions and run python file
+ gnome-terminal --geometry 73x31+400+0 -- /bin/sh -c 'chmod +x roomba.py;python roomba.py'
+#close terminal windows after X  seconds
+sleep 120
+#close gazebo
+pkill gzserver 
+pkill gzclient
+#close terminals
+pkill gnome-terminal-
