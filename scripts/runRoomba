@@ -16,7 +16,7 @@ sleep 4
 #give file permissions and run python file
  gnome-terminal --geometry 73x31+400+0 -- /bin/sh -c 'chmod +x roomba.py;python roomba.py'
 #close terminal windows after X  seconds
-sleep 120
+sleep 60
 #close gazebo
 pkill gzserver 
 pkill gzclient
