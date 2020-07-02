@@ -6,10 +6,11 @@
  */
 //include background library to make program work
 #include <Stepper.h>
-
-const int stepsPerRevolution = 2000;  // change this to fit the number of steps per revolution
+//how many steps in one revolution of specific motor
+const int stepsPerRevolution = 2000; 
 // initialize the stepper library on pins 8 through 11:
-Stepper myStepper(stepsPerRevolution, 8, 9, 10, 11);
+Stepper rightMotors(stepsPerRevolution, 19,18, 23, 5);
+Stepper leftMotors(stepsPerRevolution, 26,14, 27, 12);
 
 //sets up program, not used
 void setup() {}
@@ -41,8 +42,11 @@ void moveStepper(double revolutions){
   //keep moving as long as stepCount is less than total step count
   while(stepCount<stepsPerRevolution*revolutions){
     //move motor one step, could be forward or backward based on multiplier
-    myStepper.step(1*forwardMultiplier);
+    leftMotors.step(-1*forwardMultiplier);
+    rightMotors.step(1*forwardMultiplier);
     //increment step count
     stepCount++;
+    //wait x milliseconds so motor has time to move
+    delay(10);
   }
 }

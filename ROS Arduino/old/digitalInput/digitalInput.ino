@@ -4,7 +4,7 @@
  * code source https://www.arduino.cc/en/tutorial/pushbutton
  */
 // choose the input pin (for a pushbutton)
-int inPin = 7; 
+int inPin = 34; 
 //the current value of the input device  
 bool val;
 //runs once to set things up for the loop
