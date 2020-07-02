@@ -28,3 +28,15 @@ Using [Cheese](https://help.ubuntu.com/community/Webcam) for Webcam Feedback
 
 
 **-Jacob Smith** jsmith2021@brandeis.edu
+
+
+
+Sources
+
+[Launch tab in gnome](https://unix.stackexchange.com/questions/158434/open-gnome-terminal-with-several-tabs-and-execute-a-few-commands-in-every-tab) 
+
+[Rename tab in gnome](https://unix.stackexchange.com/questions/177572/how-to-rename-terminal-tab-title-in-gnome-terminal)
+
+[Hide Error Message in Gnome](https://stackoverflow.com/questions/15678796/suppress-shell-script-error-messages)
+
+[Name tab](https://unix.stackexchange.com/questions/24734/how-can-i-launch-gnome-terminal-with-unique-titles-for-multiple-tabs)

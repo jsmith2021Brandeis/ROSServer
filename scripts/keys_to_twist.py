@@ -4,6 +4,9 @@ import rospy
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist
 
+#print a message explaining what this program is 
+print "Converts the recorded keypresses into commands for the robot, shows no output"
+
 # Map from a letter to a the change in x for linear, and the change in z for angular
 key_mapping = { 'w': [ 0, .5], 'x': [0, -.5],
                 'a': [.5, 0], 'd': [-.5,  0],
