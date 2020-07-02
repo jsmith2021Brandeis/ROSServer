@@ -13,15 +13,13 @@ Made Initially from Jacob Smith's Cosi 119 work, will be used to create ROS Serv
 
 runRoomba.py: A python ROS node (based on wander.py) which drives forward if it does not see a ditacen less than the threshold, and turns if it does. This behavior results in a wall avoiding pattern, much like a roomba.
 
-#### Story
+Using [Cheese](https://help.ubuntu.com/community/Webcam) for Webcam Feedback
 
-​		To get the roomba program working, I tried different slices of vision in  front of the robot. The angle needs to be wide enough that the robot can see it front of its wheels but not so wide that it turns from a false positive. I also had to remove infinite and 0 junk distances. Finally, I experimented with changing the speed and distance thresholds. 
+​	follow link to install software
 
-#### Bugs
+​	run cheese in command terminal to launch
 
-​	The robot can get stuck in tight corners, and will easily get stuck on low obstacles. This is because the robot only relies on lidar data, and the lidar is on the top of the robot.	
-
-To Do: widen robot's field of vision, have it turn random amount so it doesn't drive in loops, run on real robot, lengthen time until robot gets stuck
+![View of Camera Software in Cheese](Camera.png)
 
 ​	Demonstration: This is my roomba program running on the gazebo simulator, it gets stuck after the video 	ends.
 
@@ -30,3 +28,15 @@ To Do: widen robot's field of vision, have it turn random amount so it doesn't d
 
 
 **-Jacob Smith** jsmith2021@brandeis.edu
+
+
+
+Sources
+
+[Launch tab in gnome](https://unix.stackexchange.com/questions/158434/open-gnome-terminal-with-several-tabs-and-execute-a-few-commands-in-every-tab) 
+
+[Rename tab in gnome](https://unix.stackexchange.com/questions/177572/how-to-rename-terminal-tab-title-in-gnome-terminal)
+
+[Hide Error Message in Gnome](https://stackoverflow.com/questions/15678796/suppress-shell-script-error-messages)
+
+[Name tab](https://unix.stackexchange.com/questions/24734/how-can-i-launch-gnome-terminal-with-unique-titles-for-multiple-tabs)
