@@ -18,6 +18,7 @@ def keys_cb(msg, twist_pub):
         return # unknown key
 
     vels = key_mapping[msg.data[0]]
+
     t = Twist()
     t.angular.z = vels[0]
     t.linear.x = vels[1]
@@ -34,6 +35,7 @@ if __name__ == '__main__':
 
 # let me know when someone else publishes `keys` topic, then call keys_cb
     rospy.Subscriber('keys', String, keys_cb, twist_pub)
+
 
 # Wait until ^c
     rospy.spin()

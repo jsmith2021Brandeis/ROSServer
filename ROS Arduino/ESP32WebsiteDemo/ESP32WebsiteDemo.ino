@@ -45,8 +45,8 @@ int forwardMultiplier=1;
 //wifi global
 #include <WiFi.h>
 #define LEDBUILTIN 5
-const char* ssid     = "313";
-const char* password = "Brandeis2021";
+const char* ssid     = "Moto E (4) 5232";
+const char* password = "pppppppp";
 WiFiServer server(80);
 
 int value = 0;
@@ -226,10 +226,10 @@ void runServer() {
   //how many revolutions the user commanded the robot to move, 0 for no commmand
   double revolutions=0;
   WiFiClient client = server.available();   // listen for incoming clients
-  Serial.print(" DrivingDir: ");
   //stored whether the robot was commanded to do something by the website
   boolean commanded=false;
-  if (client) {                             // if you get a client,
+  if (client) {  
+    Serial.print(" DrivingDir: ");// if you get a client,
     String currentLine = "";                // make a String to hold incoming data from the client
     while (client.connected()) {            // loop while the client's connected
       printSensorData();
@@ -329,6 +329,7 @@ void runServer() {
         if (!commanded) {
         Serial.print("NONE    ");
         }
+        Serial.println();
       }
   }
   // close the connection:
