@@ -10,22 +10,29 @@ import rospy
 from std_msgs.msg import String
 
 vel=0
-#global client
-command ="VEL{-1}\n"
+velSeen=False
 #repeat whole program if client disconnects
 lastHeard=time.time()
 elapsedTime=0
+
+
  
 # Callback whenever a `keys` message is seen
 def keys_cb(msg):
     global vel
+    global velSeen
+    velSeen=False
     key=msg.data
     if key=='w':
        vel=1
+    elif key=='d':
+       vel=2
+    elif key=='x':
+       vel=3
+    elif key=='a':
+       vel=4
     elif key=='s':
        vel=0
-    elif key=='x':
-       vel=-1
     print (vel)
 
 
@@ -64,8 +71,11 @@ if __name__ == '__main__':
                     content = client.recv(32)
                 except socket.error:
                     print "Robot Reconnected!"
-                    sys.exit(0)
-                client.sendall("VEL{"+str(vel)+"}\n")
+                    sys.exit(0) 
+                if not velSeen:
+                    client.sendall(str(vel)+"\n")
+                    velSeen=True
+                print(content)
                 ESPComm.publish(content)
 
         client.close()

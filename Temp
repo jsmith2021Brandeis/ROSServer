@@ -1,4 +1,0 @@
-/home/robotics/Downloads/rosserial-noetic-devel/rosserial_arduino/src/rosserial_arduino
-
- rosrun rosserial_arduino make_libraries.py /home/robotics/Arduino/libraries/
-

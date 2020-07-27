@@ -50,3 +50,23 @@ ROS on ESP32 Links [1](https://blog.hadabot.com/ros2-esp32-to-control-motor-driv
 [Inlcuding Arduino Libraries in Linux](https://forum.arduino.cc/index.php?topic=141190.0)
 
 [Using TImer Library](https://github.com/BrandeisMakerLab/Robotics_ZumoAutomation)
+
+[ESP32 Multithreading](https://randomnerdtutorials.com/esp32-dual-core-arduino-ide/)
+
+Temp 
+
+/home/robotics/Downloads/rosserial-noetic-devel/rosserial_arduino/src/rosserial_arduino
+
+ rosrun rosserial_arduino make_libraries.py /home/robotics/Arduino/libraries/
+
+
+/home/robotics/.arduino15/packages/esp32/hardware/esp32/1.0.4/libraries/WiFi
+
+links 7/22/20
+https://github.com/sachin0x18/rosserial_esp32/blob/master/src/examples/echo/main/esp_echo.cpp
+https://github.com/sachin0x18/rosserial_esp32/tree/master/src/examples/echo
+https://answers.ros.org/question/328467/sending-rostopic-form-esp32-through-husarnet/
+https://www.hackster.io/khasreto/run-rosserial-over-the-internet-with-esp32-0615f5
+http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
+http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
+https://github.com/ros-drivers/rosserial

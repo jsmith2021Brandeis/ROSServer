@@ -13,15 +13,17 @@ const int stepsPerRevolution = 2000;
 //the 2nd and 3rd paremeters are switched so motor can go backwards
 Stepper rightMotors(stepsPerRevolution, 19, 18, 23, 5);
 Stepper leftMotors(stepsPerRevolution, 26, 14, 27, 12);
-double speed = .06; //set the desired speed in m/s
+double speed = 0; //set the desired speed in m/s
 
 int forwardMultiplier=1;
 
 
-void setup() {}
+void setup() {
+  Serial.begin(9600);
+}
 
 void loop() {
-  moveStepper(1);
+  moveStepper(-1);
   
 }
 
@@ -41,7 +43,6 @@ void moveStepper(double localSpeed){
       }
   } 
 
-  
     
   if(speed!=0){//move motor one step, could be forward or backward based on multiplier
       leftMotors.step(-1 * forwardMultiplier);
