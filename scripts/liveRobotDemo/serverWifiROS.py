@@ -41,7 +41,7 @@ def connect():
     connected = False  
     while not(connected): 
         try:
-            s.bind(('192.168.43.199', 8090))
+            s.bind(('192.168.43.231', 8090))
             connected=True
         except socket.error as ex:
             print "Error, the socket could not be opened"
