@@ -70,3 +70,51 @@ https://www.hackster.io/khasreto/run-rosserial-over-the-internet-with-esp32-0615
 http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
 http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
 https://github.com/ros-drivers/rosserial
+
+links for cmd vel to motor speeds
+https://github.com/UbiquityRobotics/ubiquity_motor/tree/kinetic-devel/src
+https://github.com/danielsnider/simple_drive/blob/master/drive_firmware/src/main.cpp
+https://github.com/ros-controls/ros_controllers/tree/melodic-devel
+https://github.com/merose/diff_drive
+https://answers.ros.org/question/209963/cmd_veltwist-transform-twist-message-into-left-and-right-motor-commands/
+
+links for website / running multiple robots on ROS
+https://github.com/ramonus/flask-video-stream
+https://answers.ros.org/question/41433/multiple-robots-simulation-and-navigation/
+https://github.com/ManivannanMurugavel/opencv-flask-livecam/blob/master/app.py
+https://answers.ros.org/question/160071/running-multiple-instances-of-same-node/
+Video Streaming with Flask - miguelgrinberg.com
+
+
+
+
+
+[Final Link for Website Streaming](https://github.com/log0/video_streaming_with_flask_example)
+
+[Final Link For Website Uploading](https://github.com/thamizhchelvan/Python/blob/master/flask-file-upload/app.py)
+
+https://www.quora.com/How-do-I-write-a-Python-script-to-execute-bash-commands-Python-3-6
+
+[Final Link for screensharing](https://github.com/nikhil-web/screenshare) works on phone version: https://github.com/gvsurenderreddy/screenshare-2
+
+
+
+link for passwords https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/
+
+https://pythonspot.com/login-authentication-with-flask/
+
+
+
+launch terminal from python https://unix.stackexchange.com/questions/373186/open-gnome-terminal-window-and-execute-2-commands
+
+change camera orientation gazebo https://answers.gazebosim.org//question/408/is-there-a-way-to-modify-the-default-camera-position-in-the-world-file/
+
+run program in background https://askubuntu.com/questions/106351/running-programs-in-the-background-from-terminal
+
+
+
+connext to wifi network using bssid https://forum.arduino.cc/index.php?topic=642938.0
+
+require username and password to access website https://flask-basicauth.readthedocs.io/en/latest/
+
+ip adress tunneling https://www.sitepoint.com/accessing-localhost-from-anywhere/

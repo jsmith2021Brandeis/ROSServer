@@ -5,14 +5,15 @@
 
 #include <AccelStepper.h>
 //only chnage based on the robot
-AccelStepper leftDrive(AccelStepper::FULL4WIRE, 19, 18, 23, 5); // Defaults to AccelStepper::FULL4WIRE (4 pins) on 2, 3, 4, 5
-AccelStepper rightDrive(AccelStepper::FULL4WIRE, 26, 14, 27, 12); 
+//switch 2nd and third parameters so mothey can go bakcward
+AccelStepper leftDrive(AccelStepper::FULL4WIRE, 0, 16, 4, 17); // Defaults to AccelStepper::FULL4WIRE (4 pins) on 2, 3, 4, 5
+AccelStepper rightDrive(AccelStepper::FULL4WIRE, 19, 18, 23, 5); 
 int leftInvert=-1;
 int rightInvert=-1;
 
 
 //how fast the robot should move in meters per second
-double driveSpeed;
+double driveSpeed=.01;
 //the actual power to set the motors on
 double drivePower;
 
@@ -30,7 +31,7 @@ void setup() {
    rightDrive.setMaxSpeed(10000);
    
    //initialize serial connection
-   Serial.begin(9600);
+   Serial.begin(115200);
    delay(2000);
    Serial.println("\n\nMOTOR EXAMPLE TEST");
    initTime=millis();
@@ -64,8 +65,8 @@ void loop(){
        }
 
        if(driveSpeed>=.06){
-          Serial.println("TEST OVER");
-          while(1){} 
+          driveSpeed=.01;
+          initTime=millis();
        
        }
      
@@ -74,12 +75,12 @@ void loop(){
       if(driveSpeed==0){
         leftDrive.stop();  
       }else{
-         leftDrive.setSpeed(drivePower);
+         leftDrive.setSpeed(drivePower*leftInvert);
       }
       if(driveSpeed==0){
           rightDrive.stop();
        }else{
-        rightDrive.setSpeed(drivePower);
+        rightDrive.setSpeed(drivePower*rightInvert);
        }  
        leftDrive.runSpeed();
        rightDrive.runSpeed();

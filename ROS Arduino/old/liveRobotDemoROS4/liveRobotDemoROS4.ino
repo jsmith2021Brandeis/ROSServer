@@ -84,16 +84,6 @@ void taskCode( void * pvParameters ){
       leftDrive.run();
       rightDrive.run();
       vTaskDelay(1/ portTICK_PERIOD_MS);
-     
-      if(count>=1000){
-        Serial.print(millis()-initTime);
-        Serial.print("\t");
-        Serial.println(count);
-        count=0;
-        initTime=millis();
-      }else{
-        count++; 
-       }
   }
    
 }
@@ -225,12 +215,4 @@ void process() {
         rightDrive.setSpeed(driveSpeed*rightDir*rightInvert);
        }
       
-}
-
-//sets global variables and prints message to acknowledge start of header command
-void acknowledgeCommand(int providedNumParams,char* command){
-  numParams=providedNumParams;
-  paramIndex=0;
-  Serial.print("Recieved Command: ");
-  Serial.print(command);
 }

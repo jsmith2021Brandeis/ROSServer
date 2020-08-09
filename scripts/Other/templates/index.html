@@ -1,0 +1,54 @@
+<!--Jacob Smith 8/2/20 Brandeis Automation Lab-->
+<!--The website interface for the ROSSERVER Project-->
+<html>
+    <!--For screen view-->
+    <script src="js/axios.min.js"></script>
+
+    <head>
+        <title>ROSSERVER Website</title>
+    </head>
+    
+
+    <body>
+        
+        <h1>ROSSERVER Website</h1>
+        
+        <!--Webcam Feed to Robot-->
+        <h2>Live Video Feed to Robot</h2>
+        <img id="bg" src="{{ url_for('video_feed') }}">
+       
+        <!--Screen View of Server-->
+        <h2>Screen View of Server</h2>
+               
+ 
+        <script type="text/javascript">
+            function reloadpic() {
+                document.images["screen"].src = "screen.png?random=" + new Date().getTime();
+                setTimeout("reloadpic();", 2000);
+            }
+            onload = reloadpic;
+        </script>
+   
+        <img width="100%" id="screen">
+  
+
+        </script>
+
+        <!--Profiles Section-->
+        <h2>Existing Profiles</h2>
+        <form action="/selectProfile" method="post" enctype="multipart/form-data">
+            <input type="submit" name="submit_button" value="Roomba Simulation">
+            <input type="submit" name="submit_button" value="Teleop Live Robot">
+            <input type="submit" name="submit_button" value="My Saved Experiment Live Robot">
+            <input type="submit" name="submit_button" value="End Program">
+        </form> 
+
+        <!--File Uploading Logic-->
+        <h2>Save New Profile</h2>
+
+        <form action="/handleUpload" method="post" enctype="multipart/form-data">
+        Choose the file: <input type="file" name="photo"/><BR>
+        <input type="submit" value="Upload"/></form>
+</body>
+
+</html>
