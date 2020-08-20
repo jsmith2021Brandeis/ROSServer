@@ -10,10 +10,10 @@ gnome-terminal \
     --tab -e "bash -c   'sleep 2; export TURTLEBOT3_MODEL=burger; roscore;  read -n1'" \
     --tab -e "bash -c 'echo -ne \"\033]0;Robot Commander\007\" ; sleep 1 ; python keys_to_twist.py ; read -n1'" \
     --tab -e "bash -c 'echo -ne \"\033]0;Robot Listener\007\" ; sleep 4; bash runServerWifiROS ; read -n1'" 1>/dev/null \
-    --tab -e "bash -c 'echo -ne \"\033]0;Key Publisher\007\" ; sleep 4; python key_publisher.py ; read -n1'" 1>/dev/null 
+    --tab -e "bash -c 'echo -ne \"\033]0;Key Publisher\007\" ; sleep 4; python key_publisher.py ; read -n1'" 1>/dev/null \
 
 #close terminal windows after X  seconds
-sleep 200
+sleep 300
 #close gazebo
 pkill gzserver 
 pkill gzclient

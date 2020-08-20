@@ -109,14 +109,17 @@ def selectProfile():
     
     folderName=""
     bashName= ""
-
-    if request.form['submit_button'] == 'Roomba Simulation':
+    
+    if request.form['submit_button'] == 'Teleop Live Robot':
+        folderName= "teleopDemo"
+        bashName="runLiveRobot"
+    elif request.form['submit_button'] == 'Roomba Live Robot':
+        folderName= "ESPRoombaDemo"
+        bashName="runLiveRobot"
+    elif request.form['submit_button'] == 'Roomba Simulation':
         folderName= "RoombaDemo"
         bashName="runRoomba"
-    elif request.form['submit_button'] == 'Teleop Live Robot':
-        folderName= "liveRobotDemoCMDVel"
-        bashName="runLiveRobot"
-    elif request.form['submit_button'] == 'My Saved Experiment Live Robot':
+    elif request.form['submit_button'] == 'My Saved Simulation':
         folderName= "Other/userScripts"
         bashName="runUserScript.sh"
     elif request.form['submit_button'] == 'End Program':

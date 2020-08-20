@@ -118,3 +118,5 @@ connext to wifi network using bssid https://forum.arduino.cc/index.php?topic=642
 require username and password to access website https://flask-basicauth.readthedocs.io/en/latest/
 
 ip adress tunneling https://www.sitepoint.com/accessing-localhost-from-anywhere/
+
+get unique id of ESP 32 https://www.reddit.com/r/esp32/comments/fan3rj/unique_id/

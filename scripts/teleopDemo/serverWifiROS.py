@@ -66,8 +66,10 @@ if __name__ == '__main__':
                 if not velSeen:
                     client.sendall(str(vel)+"\n")
                     velSeen=True
-                print(content)
-                ESPComm.publish(content)
+                #only publish no whitespace recieved characters
+                if not content.isspace():
+                    print(content)
+                    ESPComm.publish(content)
 
         client.close()
         rate.sleep()

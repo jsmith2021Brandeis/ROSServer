@@ -1,0 +1,24 @@
+#!/bin/bash
+#Jacob smith Brandeis Auomtation Lab 7/2/2020
+#Sets up ROS and runs ROS programs for ROSSERVER Project
+
+#print helper message
+echo "Main Command Terminal, will execute the other commands" 
+#execute necessary commands for ROSSERVER setup
+#in order: launch camera, roslaunch, ros subscriber (reads keys) , ros publisher (publishes key press)
+gnome-terminal \
+    --tab -e "bash -c   'sleep 2; export TURTLEBOT3_MODEL=burger; roscore;  read -n1'" \
+    --tab -e "bash -c 'echo -ne \"\033]0;Robot Commander\007\" ; sleep 1 ; python pilot.py ; read -n1'" \
+    --tab -e "bash -c 'echo -ne \"\033]0;Robot Listener\007\" ; sleep 4; bash runServerWifiROS ; read -n1'" 1>/dev/null \
+    --tab -e "bash -c 'echo -ne \"\033]0;Robot Listener Chip\007\" ; sleep 4; python serverWifiROSChip.py ; read -n1'" 1>/dev/null \
+    --tab -e "bash -c 'echo -ne \"\033]0;Color Sensor\007\" ; sleep 4; python  colorSensor.py; read -n1'" 1>/dev/null \
+    --tab -e "bash -c 'echo -ne \"\033]0;ESPCOMM Viewer\007\" ; sleep 4; rostopic echo ESPComm ; read -n1'" 1>/dev/null \
+    --tab -e "bash -c 'echo -ne \"\033]0;Color Viewer\007\" ; sleep 4; rostopic echo color_pub; read -n1'" 1>/dev/null 
+
+#close terminal windows after X  seconds
+sleep 300
+#close gazebo
+pkill gzserver 
+pkill gzclient
+#close terminals
+pkill gnome-terminal-

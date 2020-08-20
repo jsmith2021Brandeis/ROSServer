@@ -1,0 +1,11 @@
+#!/bin/bash
+#Jacob smith Brandeis Auomtation Lab 7/2/2020
+#Sets up ROS and runs ROS programs for ROSSERVER Project
+
+#print helper message
+echo "Runs Wifi Sever on Infinite Loop" 
+while true 
+do
+    sleep 2
+    python serverWifiROS.py
+done

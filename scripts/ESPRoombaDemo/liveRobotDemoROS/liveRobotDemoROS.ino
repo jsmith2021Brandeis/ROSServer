@@ -56,11 +56,56 @@ double rightPower=0;
 #define WHEEL_DIST .13
 
 
+#include <Wire.h>
+#include <SparkFun_APDS9960.h>
+
+// Global Variables
+SparkFun_APDS9960 apds = SparkFun_APDS9960();
+uint16_t ambient_light = 0;
+uint16_t red_light = 0;
+uint16_t green_light = 0;
+uint16_t blue_light = 0;
+
+//the pin for the LED that illuminates the light sensor
+#define LAMPPIN 13
+//scaling factor to distinguish colors
+//so color is green if gree nvalue is greater than COLORFACTOR*red or blue
+double COLORFACTOR = 1.5;
+String color="NONE";
+
+
+long initTimeColor;
+
+
+String uniq;
+
 
 //runs once
 void setup() {
+//logic to store unique ID of ESP32 chip 
+byte mac[6];
+WiFi.macAddress(mac);
+  uniq= String(mac[0],HEX) +String(mac[1],HEX) +String(mac[2],HEX) +String(mac[3],HEX) + String(mac[4],HEX) + String(mac[5],HEX);
+ //turn color sensor lamp on
+  pinMode(LAMPPIN, OUTPUT);
+  digitalWrite(LAMPPIN, HIGH);
+
+if ( apds.init() ) {
+    Serial.println(F("Color Sensor initialization complete"));
+  } else {
+    Serial.println(F("Something went wrong during Color Sensor init!"));
+  }
+
+  // Start running the APDS-9960 light sensor (no interrupts)
+  if ( apds.enableLightSensor(false) ) {
+    Serial.println(F("Light sensor is now running"));
+  } else {
+    Serial.println(F("Something went wrong during light sensor init!"));
+  }
+  
   pinMode(FRONTLEFTOBSTACLE,INPUT);
   pinMode(FRONTRIGHTOBSTACLE,INPUT);
+  
 
   leftDrive.setMaxSpeed(speed * 2);
   rightDrive.setMaxSpeed(speed * 2);
@@ -69,7 +114,7 @@ void setup() {
   Serial.begin(9600);
   pinMode(INDPIN, OUTPUT);
   connect();
-
+  initTimeColor=millis();
 }
 
 
@@ -105,9 +150,44 @@ void loop() {
       newData = false;
     }
 
-    leftDrive.runSpeed();
-    rightDrive.runSpeed();
-   
+    if (leftSpeed!=0){
+      leftDrive.runSpeed();
+    }
+
+    if(rightSpeed!=0){
+      rightDrive.runSpeed();
+    }
+ 
+
+    if(millis()-initTimeColor>200){
+      
+      //get and print color readouts every x milliseconds
+      apds.readAmbientLight(ambient_light);
+      apds.readRedLight(red_light);
+      apds.readGreenLight(green_light);
+      apds.readBlueLight(blue_light);
+
+      //the leading print becomes a newline, so use a space and ingore it
+      client.print("/*");
+      client.print(uniq);
+      client.print(" ");
+      client.print("COLOR:");
+      client.print(ambient_light);
+      client.print(":");
+      client.print(red_light);
+      client.print(":");
+      client.print(green_light);
+      client.print(":");
+      client.print(blue_light);
+       client.print("*\\");
+      //client.print("\");
+
+      initTimeColor=millis();
+    }else{
+      
+      client.print(""); 
+    }
+  
   }
   digitalWrite(INDPIN, LOW);
 }
@@ -190,16 +270,10 @@ void process() {
    }
 
 
-  if (leftSpeed == 0) {
-    leftDrive.stop();
-  } else {
-    leftDrive.setSpeed(leftPower *  leftInvert);
-  }
-  if (rightSpeed == 0) {
-    rightDrive.stop();
-  } else {
-    rightDrive.setSpeed(rightPower * rightInvert);
-  }
+  
+   leftDrive.setSpeed(leftPower *  leftInvert);
+   rightDrive.setSpeed(rightPower * rightInvert);
+  
 
 }
 
