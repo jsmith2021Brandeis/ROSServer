@@ -45,8 +45,8 @@ int forwardMultiplier=1;
 //wifi global
 #include <WiFi.h>
 #define LEDBUILTIN 5
-const char* ssid     = "Moto E (4) 5232";
-const char* password = "pppppppp";
+const char* ssid     = "brandeis_open";
+const char* password = "";
 WiFiServer server(80);
 
 int value = 0;
@@ -64,6 +64,7 @@ void setup() {
   digitalWrite(LAMPPIN, HIGH);
   // Initialize Serial port
   Serial.begin(9600);
+  delay(2000);
   Serial.println("\n\nROSSERVER PROTOTOYPE ROBOT DEMO");
   Serial.println();
   //light sensor startup code

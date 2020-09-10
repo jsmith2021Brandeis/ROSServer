@@ -24,8 +24,8 @@ int driveSpeed = 100;
 const char* ssid = "Moto E (4) 5232";
 const char* password = "pppppppp";
 
-const uint16_t port = 8090;
-const char * host = "192.168.43.231";//was .231
+const uint16_t port = 8090;//was 8080
+const char * host = "192.168.43.231";//was 192.168.43.231 or 172.22.61.194
 
 int INDPIN = 15;
 char c;

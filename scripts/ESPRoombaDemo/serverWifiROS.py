@@ -10,6 +10,7 @@ import rospy
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist
 
+print "test"
 vel="CMDVEL 0 0"
 velSeen=False
 #repeat whole program if client disconnects
@@ -47,13 +48,12 @@ def connect():
             print("Trying to Connect for "+ str(elapsedTime)+ " seconds")
             initTime=millis()
         try:
-            s.bind(('192.168.43.231', 8090)) #was .231
+            s.bind(('192.168.43.231', 8090)) #was 172.22.61.194 8080
             connected=True
         except socket.error as ex:
             foundException=True
             #time.sleep(1)#maybe use this?
     return s
-
   
 # Convention that means: "if this program was run directly (vs. imported)"
 if __name__ == '__main__':

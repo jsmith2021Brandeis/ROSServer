@@ -10,7 +10,6 @@ gnome-terminal \
     --tab -e "bash -c   'sleep 2; export TURTLEBOT3_MODEL=burger; roscore;  read -n1'" \
     --tab -e "bash -c 'echo -ne \"\033]0;Robot Commander\007\" ; sleep 1 ; python pilot.py ; read -n1'" \
     --tab -e "bash -c 'echo -ne \"\033]0;Robot Listener\007\" ; sleep 4; bash runServerWifiROS ; read -n1'" 1>/dev/null \
-    --tab -e "bash -c 'echo -ne \"\033]0;Robot Listener Chip\007\" ; sleep 4; python serverWifiROSChip.py ; read -n1'" 1>/dev/null \
     --tab -e "bash -c 'echo -ne \"\033]0;Color Sensor\007\" ; sleep 4; python  colorSensor.py; read -n1'" 1>/dev/null \
     --tab -e "bash -c 'echo -ne \"\033]0;ESPCOMM Viewer\007\" ; sleep 4; rostopic echo ESPComm ; read -n1'" 1>/dev/null \
     --tab -e "bash -c 'echo -ne \"\033]0;Color Viewer\007\" ; sleep 4; rostopic echo color_pub; read -n1'" 1>/dev/null 

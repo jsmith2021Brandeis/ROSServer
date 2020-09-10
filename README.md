@@ -119,4 +119,10 @@ require username and password to access website https://flask-basicauth.readthed
 
 ip adress tunneling https://www.sitepoint.com/accessing-localhost-from-anywhere/
 
+alias tunnel='cd /home/robotics/Downloads ; ./ngrok http http://172.22.0.67:5000/'
+
 get unique id of ESP 32 https://www.reddit.com/r/esp32/comments/fan3rj/unique_id/
+
+alternative to ngrok https://github.com/mmatczuk/go-http-tunnel
+
+get bssid from ubuntu https://askubuntu.com/questions/833905/how-can-i-connect-to-a-specific-bssid
