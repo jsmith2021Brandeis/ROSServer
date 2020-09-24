@@ -126,3 +126,25 @@ get unique id of ESP 32 https://www.reddit.com/r/esp32/comments/fan3rj/unique_id
 alternative to ngrok https://github.com/mmatczuk/go-http-tunnel
 
 get bssid from ubuntu https://askubuntu.com/questions/833905/how-can-i-connect-to-a-specific-bssid
+
+
+
+Networking Images:
+
+Wifi networks viewable from:
+
+​	ESP32
+
+![Wifi networks viewable from ESP32](ESP32BSSID.png)
+
+​	Computer when not connected to specific BSSID
+
+![Wifi Newtorks Viewable from computer not connected to specific BSSID](ManyBSSID.png)
+
+​	Computer when connected to specific BSSID
+
+​	![Wifi networks viewable from computer when connected to specific BSSID](OnlyBSSID.png)
+
+Cannot assign requested address error from computer (ip172.20.177.185, port 8090 on brandeis_open )
+
+ ![Cannot Assign Requested Address error](cannotassign.png)
