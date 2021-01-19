@@ -13,7 +13,7 @@
 ### Image Gallery
 
 #### 	Website Interface
-![Camera View Robot and Simulation](images/Camera View Robot and Simulation.png)
+![Camera View Robot and Simulation](images/WebInterfaceView.png)
 
 - Features
   - Live Video Feed at Top 
@@ -21,6 +21,7 @@
   - Launch buttons for available projects, such as autonomous navigation of real and simulated robot
   - Upload a user ROS profile
   - Login Page
+  			![Login Page](images/LoginPage.png)
 
 #### Roomba Program in Simulator
 
