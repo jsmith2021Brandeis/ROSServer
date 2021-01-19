@@ -17,11 +17,16 @@
 
 - Features
   - Live Video Feed at Top 
+  
   - Screenshare of ROS Simulator at bottom
+  
   - Launch buttons for available projects, such as autonomous navigation of real and simulated robot
+
   - Upload a user ROS profile
+  
   - Login Page
-![Login Page](images/LoginPage.png)
+  
+    ![Login Page](images/LoginPage.png)
 
 #### Roomba Program in Simulator
 
